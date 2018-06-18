@@ -1,0 +1,42 @@
+@import "example-init";
+
+[data-block] {
+  position: relative;
+  outline: 2px dashed govuk-colour("grey-1");
+  padding: govuk-spacing(3);
+  padding-top: 3em;
+  margin: govuk-spacing(6) 0;
+}
+
+[data-block]::before {
+  content: 'block: ' attr(data-block);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .25em .5em;
+  background: white;
+  border-bottom: 2px dashed govuk-colour("grey-1");
+  border-right: 2px dashed govuk-colour("grey-1");
+  font-family: $govuk-font-family;
+}
+
+[data-block] > .govuk-body:last-child {
+  margin-bottom: 0;
+}
+
+[data-block] > .govuk-body {
+  line-height: 1.5;
+}
+
+.block-break {
+  margin-top: govuk-spacing(6);
+  margin-bottom: govuk-spacing(6);
+  border: 0;
+  height: 0;
+  border-bottom: 2px dashed govuk-colour("grey-3");
+}
+
+.govuk-main-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}

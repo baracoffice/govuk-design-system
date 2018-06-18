@@ -1,0 +1,136 @@
+---
+title: Template
+description: GOV.UK Images
+section: Styles
+layout: layout-pane.njk
+---
+
+{% from "_example.njk" import example %}
+
+To keep your pages consistent with the rest of GOV.UK you should use this template.
+
+Template combines the boilerplate markup and [components](../../components) needed for a basic GOV.UK page, it includes:
+
+- JavaScript that adds a `.js-enabled` class, which is required by components with JavaScript behaviour.
+- [Skip link](../../components/skip-link) component
+- [Header](../../components/header) component
+- [Footer](../../components/footer) component
+- favicon, and other related theme icons
+
+In the examples provided, we show both HTML and Nunjucks.
+
+If you are not using Nunjucks, you can use the HTML examples, you will need to update manually when new versions are released.
+
+If you are using Nunjucks you can use the template provided in GOV.UK Frontend, you'll get updates to the Template when we release them.
+
+## Default
+
+This example shows the minimum required for a GOV.UK page.
+
+{{ example({group: 'styles', item: 'template', example: 'default', html: true, nunjucks: true, open: false }) }}
+
+## Customised defaults
+
+This example shows how to change the defaults.
+
+{{ example({group: 'styles', item: 'template', example: 'custom', html: true, nunjucks: true, open: false }) }}
+
+## Nunjucks
+
+
+### Configuring Nunjucks
+
+When using Nunjucks you'll need to add `node_modules/govuk-frontend/` as an available view:
+
+```
+nunjucks.configure('node_modules/govuk-frontend/', {
+  autoescape: true
+})
+```
+
+See the [Nunjucks getting started guide](https://mozilla.github.io/nunjucks/getting-started.html) for more information.
+
+Once you have configured Nunjucks, you can now extend `template.njk` in your page, see the examples below.
+
+### Changing template content
+
+The Nunjucks template allows two ways to change the content, [variables](https://mozilla.github.io/nunjucks/templating.html#set) or [blocks](https://mozilla.github.io/nunjucks/templating.html#block).
+
+The main difference between a variable and block is that blocks can contain markup.
+
+#### Variables
+
+Variables can be set with:
+
+```js
+{% raw %}
+{% set variableName = 'test' %}
+{% endraw %}
+```
+
+<table class="govuk-table app-table--fixed">
+  <caption class="govuk-table__caption govuk-visually-hidden">Variables that can be used with Template</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Variable name</th>
+      <th class="govuk-table__header" scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">htmlLang</td>
+      <td class="govuk-table__cell">Set the language of the document.</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">htmlClasses</td>
+      <td class="govuk-table__cell">Add a class to the <code>&lt;html&gt;</code> element.</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">themeColor</td>
+      <td class="govuk-table__cell">
+        Used to set the <a href="https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android">toolbar colour on some devices</a>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">bodyClasses</td>
+      <td class="govuk-table__cell">Add a class to the <code>&lt;body&gt;</code> element.</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">mainClasses</td>
+      <td class="govuk-table__cell">Add a class to the <code>&lt;main&gt;</code> element. </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Blocks
+
+Blocks can be set with:
+
+```js
+{% raw %}
+{% block blockName %}
+  HTML Here
+{% endblock %}
+{% endraw %}
+```
+
+To change the components that are included by default, set their equivalent blocks, for example:
+
+```js
+{% raw %}
+{% block header %}
+  {{ header({
+    homepageUrl: '/custom-url'
+  }) }}
+{% endblock %}
+{% endraw %}
+```
+
+#### Exploded view of the template block areas
+
+{{ example({group: 'styles', item: 'template', example: 'block-areas', html: false, open: false }) }}
