@@ -14,13 +14,13 @@ stylesheets:
   <meta name="robots" content="noindex, nofollow">
 
   <!--[if !IE 8]><!-->
-    <link href="/{{ fingerprint['design-system/stylesheets/main.css'] }}" rel="stylesheet" media="all" />
+    <link href="/{{ fingerprint['stylesheets/main.css'] }}" rel="stylesheet" media="all" />
   <!--<![endif]-->
   <!--[if lt IE 9]>
-    <link href="/{{ fingerprint['design-system/stylesheets/main-ie8.css'] }}" rel="stylesheet" media="all" />
-    <script src="/{{ fingerprint['design-system/javascripts/ie.js'] }}"></script>
+    <link href="/{{ fingerprint['stylesheets/main-ie8.css'] }}" rel="stylesheet" media="all" />
+    <script src="/{{ fingerprint['javascripts/ie.js'] }}"></script>
   <![endif]-->
-  <script src="/design-system/javascripts/vendor/modernizr.js"></script>
+  <script src="/javascripts/vendor/modernizr.js"></script>
 
   {% for stylesheet in stylesheets %}
     <link href="{{ stylesheet }}" rel="stylesheet" media="all" />
@@ -90,7 +90,7 @@ stylesheets:
     <span class="app-annotate-block__label">block: bodyEnd</span>
     {{ super() }}
     {# Since we're not extending the Design System layout we need to add this manually #}
-    <script src="/design-system/javascripts/vendor/iframeResizer.contentWindow.js"></script>
-    <script src="/{{ fingerprint['design-system/javascripts/govuk-frontend.js'] }}"></script>
+    <script src="/javascripts/vendor/iframeResizer.contentWindow.js"></script>
+    <script src="/{{ fingerprint['javascripts/govuk-frontend.js'] }}"></script>
   </div>
 {%- endblock %}
