@@ -27,55 +27,22 @@ stylesheets:
 {%- endblock %}
 
 {% block bodyStart -%}
-  {# Since we can't show the blocks in the `<head>`, we pretend by creating a section in `bodyStart` #}
-  <div class="app-annotate-block">
-    <span class="app-annotate-block__label">block: headIcons</span>
-    <p class="govuk-body">
-      Set this block to override the default icons used for GOV.UK branded pages.
-      <br>
-      For example: <code>&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /&gt;</code>
-    </p>
-  </div>
-  <div class="app-annotate-block">
-    <span class="app-annotate-block__label">block: head</span>
-    <p class="govuk-body">
-      Set this block to add additional items to the <code>&lt;head&gt;</code>.
-      <br>
-      For example: <code>&lt;meta name="description" content="My page description"&gt;</code>
-    </p>
-  </div>
-  <hr class="block-break">
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: bodyStart</span>
     {{ super() }}
-    <p class="govuk-body">
-      Set this block to add content just after just after the opening <code>&lt;body&gt;</code> element
-    </p>
   </div>
 {%- endblock %}
 
 {% block skipLink -%}
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: skipLink</span>
-    <p class="govuk-body">
-      Set this block to override the default <a class="govuk-link" href="../../../components/skip-link/">Skip link</a> component.
-    </p>
-    {% from 'skip-link/macro.njk' import govukSkipLink %}
-
-    {{ govukSkipLink({
-      classes: ":focus",
-      text: "Skip to main content",
-      href: "#content"
-    }) }}
+    {{ super() }}
   </div>
 {%- endblock %}
 
 {% block header -%}
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: header</span>
-    <p class="govuk-body">
-      Set this block to override the default <a class="govuk-link" href="../../../components/header/">Header</a> component.
-    </p>
     {{ super() }}
   </div>
 {%- endblock %}
@@ -84,7 +51,6 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: main</span>
     <p class="govuk-body">
-      Set this block to override the default <code>&lt;main&gt;</code> section.
     </p>
     {{ super() }}
   </div>
@@ -94,11 +60,6 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: beforeContent</span>
     {{ super() }}
-    <p class="govuk-body">
-      Set this block to add content before to appear outside <code>&lt;main&gt;</code> element.
-      <br>
-      For example: The Back link component, Phase banner component.
-    </p>
     {% from 'back-link/macro.njk' import govukBackLink %}
 
     {{ govukBackLink({
@@ -112,18 +73,13 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: content</span>
     {{ super() }}
-    <p class="govuk-body">
-      Set this block to add content that you want to appear centered in the <code>&lt;main&gt;</code> element.
-    </p>
+    <h1 class="govuk-heading-xl">Hello, World.</h1>
   </div>
 {%- endblock %}
 
 {% block footer -%}
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: footer</span>
-    <p class="govuk-body">
-      Set this block to override the default <a class="govuk-link" href="../../../components/footer/">Footer</a> component.
-    </p>
     {{ super() }}
   </div>
 {%- endblock %}
@@ -132,9 +88,6 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: bodyEnd</span>
     {{ super() }}
-    <p class="govuk-body">
-      Set this block to add content just after just before the closing <code>&lt;/body&gt;</code> element
-    </p>
     <script src="/design-system/javascripts/vendor/iframeResizer.contentWindow.js"></script>
     <script src="/{{ fingerprint['design-system/javascripts/govuk-frontend.js'] }}"></script>
   </div>
