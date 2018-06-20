@@ -1,6 +1,6 @@
 @import "example-init";
 
-[data-block] {
+.app-annotate-block {
   position: relative;
   outline: 2px dashed govuk-colour("grey-1");
   padding: govuk-spacing(3);
@@ -8,8 +8,7 @@
   margin: govuk-spacing(6) 0;
 }
 
-[data-block]::before {
-  content: 'block: ' attr(data-block);
+.app-annotate-block__label {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,15 +19,15 @@
   font-family: $govuk-font-family;
 }
 
-[data-block] > .govuk-body:last-child {
+.app-annotate-block > .govuk-body:last-child {
   margin-bottom: 0;
 }
 
-[data-block] > .govuk-body {
+.app-annotate-block > .govuk-body {
   line-height: 1.5;
 }
 
-.block-break {
+.app-annotate-block-break {
   margin-top: govuk-spacing(6);
   margin-bottom: govuk-spacing(6);
   border: 0;

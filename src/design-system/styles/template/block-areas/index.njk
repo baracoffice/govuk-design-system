@@ -28,14 +28,16 @@ stylesheets:
 
 {% block bodyStart -%}
   {# Since we can't show the blocks in the `<head>`, we pretend by creating a section in `bodyStart` #}
-  <div data-block="headIcons">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: headIcons</span>
     <p class="govuk-body">
       Set this block to override the default icons used for GOV.UK branded pages.
       <br>
       For example: <code>&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /&gt;</code>
     </p>
   </div>
-  <div data-block="head">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: head</span>
     <p class="govuk-body">
       Set this block to add additional items to the <code>&lt;head&gt;</code>.
       <br>
@@ -43,7 +45,8 @@ stylesheets:
     </p>
   </div>
   <hr class="block-break">
-  <div data-block="bodyStart">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: bodyStart</span>
     {{ super() }}
     <p class="govuk-body">
       Set this block to add content just after just after the opening <code>&lt;body&gt;</code> element
@@ -52,7 +55,8 @@ stylesheets:
 {%- endblock %}
 
 {% block skipLink -%}
-  <div data-block="skipLink">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: skipLink</span>
     <p class="govuk-body">
       Set this block to override the default <a class="govuk-link" href="../../../components/skip-link/">Skip link</a> component.
     </p>
@@ -67,7 +71,8 @@ stylesheets:
 {%- endblock %}
 
 {% block header -%}
-  <div data-block="header">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: header</span>
     <p class="govuk-body">
       Set this block to override the default <a class="govuk-link" href="../../../components/header/">Header</a> component.
     </p>
@@ -76,7 +81,8 @@ stylesheets:
 {%- endblock %}
 
 {% block main -%}
-  <div data-block="main">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: main</span>
     <p class="govuk-body">
       Set this block to override the default <code>&lt;main&gt;</code> section.
     </p>
@@ -85,7 +91,8 @@ stylesheets:
 {%- endblock %}
 
 {% block beforeContent -%}
-  <div data-block="beforeContent">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: beforeContent</span>
     {{ super() }}
     <p class="govuk-body">
       Set this block to add content before to appear outside <code>&lt;main&gt;</code> element.
@@ -102,7 +109,8 @@ stylesheets:
 {%- endblock %}
 
 {% block content -%}
-  <div data-block="content">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: content</span>
     {{ super() }}
     <p class="govuk-body">
       Set this block to add content that you want to appear centered in the <code>&lt;main&gt;</code> element.
@@ -111,7 +119,8 @@ stylesheets:
 {%- endblock %}
 
 {% block footer -%}
-  <div data-block="footer">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: footer</span>
     <p class="govuk-body">
       Set this block to override the default <a class="govuk-link" href="../../../components/footer/">Footer</a> component.
     </p>
@@ -120,7 +129,8 @@ stylesheets:
 {%- endblock %}
 
 {% block bodyEnd -%}
-  <div data-block="bodyEnd">
+  <div class="app-annotate-block">
+    <span class="app-annotate-block__label">block: bodyEnd</span>
     {{ super() }}
     <p class="govuk-body">
       Set this block to add content just after just before the closing <code>&lt;/body&gt;</code> element
