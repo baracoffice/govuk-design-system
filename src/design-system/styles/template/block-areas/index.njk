@@ -10,6 +10,7 @@ stylesheets:
 {% set bodyClasses = "app-example-page" %}
 
 {% block head -%}
+  {# Since we're not extending the Design System layout we need to add this manually #}
   <meta name="robots" content="noindex, nofollow">
 
   <!--[if !IE 8]><!-->
@@ -88,6 +89,7 @@ stylesheets:
   <div class="app-annotate-block">
     <span class="app-annotate-block__label">block: bodyEnd</span>
     {{ super() }}
+    {# Since we're not extending the Design System layout we need to add this manually #}
     <script src="/design-system/javascripts/vendor/iframeResizer.contentWindow.js"></script>
     <script src="/{{ fingerprint['design-system/javascripts/govuk-frontend.js'] }}"></script>
   </div>
